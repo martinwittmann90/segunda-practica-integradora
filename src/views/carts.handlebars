@@ -1,0 +1,30 @@
+<a href="http://localhost:8080/products"><button class="button is-danger mt-3">Continuar comprando</button></a>
+<h1 class="title__cartpage">CHECKOUT</h1>
+{{#if cart.length}}
+  <table class="table__cart">
+    <thead>
+      <tr>
+        <th>Titulo</th>
+        <th>Precio</th>
+        <th>Cantidad</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each cart}}
+        <tr>
+          <td>{{this.title}}</td>
+          <td>{{this.price}}</td>
+          <td>{{this.quantity}}</td>
+          {{!-- <td><button onclick="removeProductFromCart('{{this._id}}')">Eliminar</button></td> --}}
+          <td><button onclick="removeProductFromCart('{{../cart._id}}', '{{this.product._id}}')">Eliminar</button></td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+  <button class="button is-danger mt-3" onclick="clearCart()">Vaciar carrito</button>
+{{else}}
+  <p>No products in the cart</p>
+{{/if}}
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/cartController.js"></script>
