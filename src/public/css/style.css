@@ -387,3 +387,55 @@ nav {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+/* Estilo de la navbar ------------------*/
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(56, 110, 141);
+  padding: 10px;
+  color: black;
+}
+
+.navbar__logo {
+  margin-right: 10px;
+}
+
+.navbar__content {
+  display: flex;
+  align-items: center;
+  font-family: "Your Fun Font", cursive;
+  font-size: 14px;
+  color: black;
+}
+
+.navbar__button {
+  background-color: red;
+  color: white;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-left: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.navbar__button:hover {
+  background-color: darkred;
+}
+
+.navbar__logout-btn {
+  margin-left: 20px;
+}
+
+.navbar__link {
+  margin-left: 10px;
+  color: black;
+  text-decoration: none;
+}
+
+.navbar__link:hover {
+  text-decoration: underline;
+}
+

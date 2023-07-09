@@ -7,10 +7,15 @@ dotenv.config();
 import GitHubStrategy from "passport-github2";
 import fetch from 'node-fetch';
 
+
 const localStrategy = local.Strategy;
 
 const GITHUB_CLIENT_ID = process.env.GITHUB_CLIENT_ID;
 const GITHUB_CLIENT_SECRET = process.env.GITHUB_CLIENT_SECRET;
+
+
+import MongoDBCarts from '../services/dbcarts.service.js'
+const dbCarts = new MongoDBCarts();
 
 export default function initPassport() {
 
@@ -25,14 +30,17 @@ export default function initPassport() {
                 console.log("User already exists");
                 return done(null, false);
             }
+            const newCart = await dbCarts.createOne();
+            const cartID = newCart.result.payload._id.toString();
+            
             const newUser = {
                 email,
                 firstName,
                 lastName,
-                age,
-                role,
+                age: Number(age),
+                role: "user",
                 password: createHash(password),
-                cart: "",
+                cart: cartID,
             };
             let userCreated = (await UserModel.create(newUser));
             console.log(userCreated);
@@ -87,13 +95,16 @@ export default function initPassport() {
             console.log(profile);
             let user = await UserModel.findOne({ email: profile.email });
             if (!user) {
+                const newCart = await dbCarts.createOne();
+                const cartID = newCart.result.payload._id.toString();
                 const newUser = {
                     email: profile.email,
                     firstName: profile._json.name || profile._json.login || "noname",
                     lastName: "nolast",
-                    age: "noage",
+                    age: 18,
                     role: "user",
                     password: "nopass",
+                    cart: cartID,
                 };
                 let userCreated = await UserModel.create(newUser);
                 console.log("User Registration succesful");

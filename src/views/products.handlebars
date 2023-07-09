@@ -1,15 +1,22 @@
-{{#if session}}
-    <div>
-        <h2>Bienvenido/a: {{session.email}}</h2>
-        <button id="logout-btn" class="logout-btn button is-danger mt-3">Logout</button>
+<nav class="navbar">
+  {{#if session}}
+    <img src="https://i.ibb.co/nrNMjtT/logo.png" class="navbar__logo"/>
+    <a href="/" class="navbar__link cartInfo" id="{{session.cart}}">
+      <button class="navbar__button button is-danger">Ver mi perfil</button>
+    </a>
+    <a href="http://localhost:8080/carts/{{session.cart}}">
+      <button class="navbar__button button is-danger">Ver Carrito</button>
+    </a>
+        <div class="navbar__content">
+      <h2 class="navbar__title">Bienvenido/a: {{session.firstName}}</h2>
+      <button id="logout-btn" class="navbar__logout-btn button is-danger">Logout</button>
     </div>
-        <a href="/"><button class="button is-danger mt-3">Ver mi perfil</button></a>
-        <button id="cartButton" class="button is-danger mt-3">Ver Carrito</button>
-{{else}}
-    <p class="guest-message">Bienvenido a la tienda</p>
-    <a href="/?login=true" class="sign-in-link button is-light">INICIAR SESIÓN</a>
-    <a href="/?register=true" class="register-link button is-primary">REGISTRO</a>
-{{/if}}
+  {{else}}
+    <p class="navbar__guest-message">Bienvenido a la tienda</p>
+    <a href="/?login=true" class="navbar__link button is-light">INICIAR SESIÓN</a>
+    <a href="/?register=true" class="navbar__link button is-primary">REGISTRO</a>
+  {{/if}}
+</nav>
     <section>
         <h1 class="title__productspage">LISTADO DE PRODUCTOS</h1>
         <div class="row product justify-content-evenly">

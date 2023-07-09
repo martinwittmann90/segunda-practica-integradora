@@ -4,7 +4,7 @@ import ProductModel from '../DAO/models/product.model.js';
 class MongoDBCarts {
   async createOne() {
     const cartCreated = await CartModel.create({});
-    return cartCreated;
+    return { status: 200, result: { status: "success", payload: cartCreated }};
   }
 
   async get(cartId) {
