@@ -84,7 +84,6 @@ viewsRouter.get('/products', isUser, async (req, res)=> {
           query: query
       };
       res.render('products', productsContext);
-      /* res.render('products', {productsVisualice, paginationInfo, nextPageUrl, sort, query}) */
     } catch(error) {
         console.error(error);
         return res.status(400).json({

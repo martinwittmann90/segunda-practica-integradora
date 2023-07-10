@@ -439,3 +439,65 @@ nav {
   text-decoration: underline;
 }
 
+/* Estilo del perfil */
+.profile_container {
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.profile-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-title {
+  font-family: "Arial", sans-serif;
+  font-size: 28px;
+  color: #333333;
+  margin-bottom: 20px;
+}
+
+.profile-name {
+  font-family: "Arial", sans-serif;
+  font-size: 20px;
+  color: #555555;
+}
+
+.profile-card h6 {
+  font-family: "Arial", sans-serif;
+  font-size: 16px;
+  color: #777777;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.profile-card p {
+  font-family: "Arial", sans-serif;
+  font-size: 14px;
+  color: #555555;
+}
+
+.profile-card hr {
+  border: none;
+  border-top: 1px solid #dddddd;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.profile-card a {
+  font-family: "Arial", sans-serif;
+  font-size: 14px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.profile-card a:hover {
+  text-decoration: underline;
+}
+
+
+
+

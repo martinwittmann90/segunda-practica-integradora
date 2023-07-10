@@ -1,11 +1,11 @@
 <nav class="navbar">
   {{#if session}}
     <img src="https://i.ibb.co/nrNMjtT/logo.png" class="navbar__logo"/>
-    <a href="/" class="navbar__link cartInfo" id="{{session.cart}}">
-      <button class="navbar__button button is-danger">Ver mi perfil</button>
+    <a href="/auth/profile" class="navbar__link cartInfo" id="{{session.cart}}">
+      <button class="navbar__button button is-danger">Perfil 🙂</button>
     </a>
     <a href="http://localhost:8080/carts/{{session.cart}}">
-      <button class="navbar__button button is-danger">Ver Carrito</button>
+      <button class="navbar__button button is-danger">Carrito 🛒</button>
     </a>
         <div class="navbar__content">
       <h2 class="navbar__title">Bienvenido/a: {{session.firstName}}</h2>

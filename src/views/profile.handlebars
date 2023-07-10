@@ -1,0 +1,56 @@
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    <a class="" href="http://localhost:8080/products">
+      <img
+        src="https://i.ibb.co/nrNMjtT/logo.png"
+        alt="logo"
+        width="100px"
+        style="margin-left: 1.4rem;"
+      />
+    </a>
+  </div>
+</nav>
+                <h2 class="profile-title">MI PERFIL</h2>
+<div class="profile_container">
+    <div>
+        <div>
+            <div class="profile-card">
+                <div>
+                    <div>
+                            <h5 class="profile-name">{{firstName}} {{lastName}}</h5>
+                            <i></i>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                            <h6>Información del usuario</h6>
+                            <hr/>
+                            <div>
+                                <div>
+                                <h6>Email: {{email}} </h6>
+                                </div>
+                                <div>
+                                <h6>Edad: {{age}}</h6>
+                                </div>
+                                <div>
+                                <h6>Rol: {{role}}</h6>
+                                </div>
+                            </div>
+                            <hr/>
+                            <div>
+                            <div>
+                                                <a href="http://localhost:8080/products">Seguir comprando</a>
+                            </div>
+                            <div>
+                            <a id="logout-btn">Log out</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/profileController.js"></script>
+{{!-- <script src="/js/cartController.js"></script> --}}
