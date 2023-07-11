@@ -4,6 +4,9 @@ const API_URL = "http://localhost:8080/api";
 
 function putIntoCart(_id) {
   const cartIdValue = addToCartById?.getAttribute("id");
+  if (cartIdValue === undefined) {
+    window.location.href = "/auth/profile";
+  }
   const url = API_URL + "/carts/" + cartIdValue + "/product/" + _id;
   const data = {};
   const options = {
