@@ -64,7 +64,7 @@ sessionsRouter.get("/current", (req, res) => {
     return res.status(200).json({ user: req.session.user });
   });
 
-sessionsRouter.get("/", (req, res) => {
+/* sessionsRouter.get("/", (req, res) => {
     return res.render("profile", req.session.user = {
         _id: req.user._id,
         email: req.user.email,
@@ -74,5 +74,5 @@ sessionsRouter.get("/", (req, res) => {
         age: req.user.age,
         cart: req.user.cart,
       });
-});
+}); */
 export default sessionsRouter;
